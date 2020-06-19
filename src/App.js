@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from "react";
+import Home from './Components/Home.js';
 import CustomPizzaForm from './Components/CustomPizzaForm.js';
+import OrderedPizza from "./Components/OrderedPizza.js";
 import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
-import OrderedPizza from "./Components/OrderedPizza.js";
 import axios from 'axios'
 
-const dummyPizzaData = [
-  {
-    name: 'Brian',
-    phoneNumber: '1234567890',
-    pickUpOrCarryOut: 'Carryout',
-    instructions: 'none',
-    pizzaSize: 'Large',
-  }
-]
 
 const initialFormValues = [
   {
@@ -25,10 +17,11 @@ const initialFormValues = [
   }
 ]
 
+const initialPizzas = []
 
 const App = () => {
 
-  const [pizzaData, setPizzaData] = useState(dummyPizzaData)
+  const [pizzaData, setPizzaData] = useState(initialPizzas)
   const [formValues, setFormValues] = useState(initialFormValues)
   const [error, setError] = useState('')
 
@@ -87,21 +80,38 @@ const App = () => {
         <div>
           <span>{error}</span>
         </div>
+
         <div>
+          <Link to='/'>--HOME--</Link>
+          <Link to='/Components/CustomPizzaForm'>--Make A Custome Pizza!--</Link>
+          <Link to='/Components/OrderedPizza'>--Ordered Pizza--</Link>
+        </div>
+
+        <Switch>
+          <Route path="/Components/CustomPizzaForm">
             <CustomPizzaForm 
             values={formValues}
             onInputChange={onInputChange}
             onSubmit={onSubmit}
             />
-        </div>
+          </Route>
 
-      {
+          <Route>
+            <OrderedPizza />
+          </Route>
+
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>  
+
+      {/* {
         pizzaData.map(pizza => {
           return (
             <OrderedPizza props={pizza}/>
           )
         })
-      }
+      } */}
 
 
 
