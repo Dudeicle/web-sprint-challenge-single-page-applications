@@ -31,19 +31,27 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
+
+    React's useRouteMatch hook is for accessing the url being used without needing to use the Route hook again.
+
 1. How would you explain form validation to someone who has never programmed before?
+
+    I would say to them that when a user interacts with a webpage and is required to input information. The webpage must check or "validate" that the information the user inputs is what the webpage is actually asking for. This way the user does not input a number for their name and their name for their birthday.
+
 1. In 1-2 sentences, define end to end testing.
+
+    End to end testing with a program like Cypress allows the developers to check that their code is working from the perspective of a user. It also allows the developer to create checkpoints at which when implemented correctly will ensure that they have not accidentally broken some previous piece of code in the process of writing a new piece of code.
 
 ## Instructions
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: git push origin `<firstName-lastName>`
+- [X] Create a forked copy of this project
+- [X] Add your team lead as collaborator on Github
+- [X] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [X] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [X] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [X] Push commits: git push origin `<firstName-lastName>`
 
 ### Task 2: Project Requirements
 
@@ -51,10 +59,10 @@ Your finished project must include all of the following requirements:
 
 - [ ] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable)
 - [ ] A form with a "/pizza" route
-- [ ] A name text input field
+- [X] A name text input field
 - [ ] Validation for name - name must be at least 2 characters
-- [ ] A dropdown for pizza size
-- [ ] A checklist for toppings - at least 4 (hint: name each separately!)
+- [X] A dropdown for pizza size
+- [X] A checklist for toppings - at least 4 (hint: name each separately!)
 - [ ] Text input for special instructions
 - [ ] An Add to Order button that submits form and returns a database record of name, size, toppings and special instructions
 
