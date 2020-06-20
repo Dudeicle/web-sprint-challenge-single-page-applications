@@ -16,7 +16,12 @@ export default function HomePage(props) {
             </div>
             </nav>
 
-
+            <PizzaForm 
+            values={formValues}
+            onInputChange={onInputChange}
+            onSubmit={onSubmit}
+            />
+            
 
         </>
     )

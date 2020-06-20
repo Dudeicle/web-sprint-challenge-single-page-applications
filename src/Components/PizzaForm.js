@@ -5,12 +5,15 @@ export default function PizzaForm(props) {
     
     const {
         values,
-        onInputChange,
         onSubmit,
+        onInputChange,
+        onCheckboxChange,
+        disabled,
+        errors,
     } = props
     
         return (
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} >
                 <div>
                     <h2>Build The Pizza!</h2>
                 </div>
@@ -39,7 +42,7 @@ export default function PizzaForm(props) {
                         />
                     </label>&nbsp;
                 
-                    <br></br>{/*------------------------------------- PIZZA INFO! -------------------------------------*/}
+                    <br></br>
     
                     <label>Pizza Size:&nbsp;
                         <select
@@ -51,7 +54,7 @@ export default function PizzaForm(props) {
                             <option value='Small'>Small</option>
                             <option value='Medium'>Medium</option>
                             <option value='Large'>Large</option>
-                            <option value='Extra Large'>Extra Large</option>
+                            <option value='ExtraLarge'>Extra Large</option>
                         </select>
                     </label>&nbsp;
     
@@ -88,13 +91,16 @@ export default function PizzaForm(props) {
                                 type="checkbox"
                                 name="nameOfChoice"
                                 value="yes"
+                                onChange={onCheckboxChange}
                                 />
                     </label>&nbsp;
                     <br></br>
                 </div>
                     <br></br>
+                
+
                 <div>
-                    <button>Finish Custom Pizza!</button>
+                    <button disabled={disabled}>Finish Custom Pizza!</button>
                 </div>
             </form>
         )
