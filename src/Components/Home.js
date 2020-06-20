@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Link } from 'react-router-dom'
-import PizzaForm from './PizzaForm';
+import React from 'react';
+import { Link } from 'react-router-dom'
 
 
-export default function HomePage(props) {
-
-    const { formValues, onInputChange, onSubmit } = props
+export default function HomePage() {
 
     return (
         <>

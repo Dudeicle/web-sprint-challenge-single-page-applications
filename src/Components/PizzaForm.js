@@ -9,7 +9,7 @@ export default function PizzaForm(props) {
         onInputChange,
         onCheckboxChange,
         disabled,
-        errors,
+        error,
     } = props
     
         return (
@@ -50,7 +50,6 @@ export default function PizzaForm(props) {
                             value={values.pizzaSize}
                             onChange={onInputChange}
                         >
-                            <option value=''>-- Select a Size --</option>
                             <option value='Small'>Small</option>
                             <option value='Medium'>Medium</option>
                             <option value='Large'>Large</option>
@@ -65,32 +64,35 @@ export default function PizzaForm(props) {
                     <label>Pepperoni: &nbsp;
                             <input 
                                 type="checkbox"
-                                name="nameOfChoice"
-                                value="yes"
+                                name="pepperoni"
+                                checked={values.pepperoni}
+                                onChange={onCheckboxChange}
                                 />
                     </label>&nbsp;
                     <br></br>
                     <label>Onions: &nbsp;
                             <input 
                                 type="checkbox"
-                                name="nameOfChoice"
-                                value="yes"
+                                name="onions"
+                                checked={values.onions}
+                                onChange={onCheckboxChange}
                                 />
                     </label>&nbsp;
                     <br></br>
-                    <label>Hot Peppers: &nbsp;
+                    <label>Peppers: &nbsp;
                             <input 
                                 type="checkbox"
-                                name="nameOfChoice"
-                                value="yes"
+                                name="peppers"
+                                checked={values.peppers}
+                                onChange={onCheckboxChange}
                                 />
                     </label>&nbsp;
                     <br></br>
                     <label>Bacon: &nbsp;
                             <input 
                                 type="checkbox"
-                                name="nameOfChoice"
-                                value="yes"
+                                name="bacon"
+                                checked={values.bacon}
                                 onChange={onCheckboxChange}
                                 />
                     </label>&nbsp;
@@ -100,7 +102,14 @@ export default function PizzaForm(props) {
                 
 
                 <div>
-                    <button disabled={disabled}>Finish Custom Pizza!</button>
+                    <button id="submitBtn" disabled={disabled}>Finish Custom Pizza!</button>
+                </div>
+
+                <br></br>
+
+                <div>
+                    <div>{error.name}</div>
+                    <div>{error.instructions}</div>
                 </div>
             </form>
         )
